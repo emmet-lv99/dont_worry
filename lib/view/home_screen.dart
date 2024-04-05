@@ -1,7 +1,10 @@
+import 'package:dont_worry/view/comp_refresh.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,14 +18,10 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.share))],
       ),
-      body: Center(
-        child: Text(
-          '돈워리',
-          style: TextStyle(
-              fontSize: 50,
-              fontFamily: 'pretendard',
-              fontWeight: FontWeight.bold),
-        ),
+      body: CompRefresh(
+        itemCount: 10,
+        onRefresh: () async => print('refresh!'),
+        builder: (context, index) => Text('10'),
       ),
     );
   }
