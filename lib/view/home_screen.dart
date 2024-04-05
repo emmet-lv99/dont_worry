@@ -5,10 +5,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const TS = TextStyle();
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          '돈-워리 / 비-해피',
+          'Done Worry',
+          style: TS.copyWith(fontWeight: FontWeight.w900),
         ),
         centerTitle: true,
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.share))],
