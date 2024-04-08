@@ -14,10 +14,17 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late List<int> pickedList;
+
+  @override
+  void initState() {
+    super.initState();
+    pickedList = RandomNumber.pickedRandom();
+  }
+
   @override
   Widget build(BuildContext context) {
     const TS = TextStyle();
-    List<int> pickedList = RandomNumber.pickedRandom();
 
     return Scaffold(
       appBar: AppBar(
